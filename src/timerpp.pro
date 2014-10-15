@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    countdowntimer.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    countdowntimer.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    countdowntimer.ui
