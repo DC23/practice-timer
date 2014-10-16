@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>212</width>
-    <height>63</height>
+    <width>243</width>
+    <height>68</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="result">
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -67,5 +67,59 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>roll</sender>
+   <signal>released()</signal>
+   <receiver>DiceWidget</receiver>
+   <slot>rollDice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>29</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>DiceWidget</receiver>
+   <slot>setMinBound(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>116</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>DiceWidget</receiver>
+   <slot>setMaxBound(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>171</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>rollDice()</slot>
+  <slot>setMinBound(int)</slot>
+  <slot>setMaxBound(int)</slot>
+ </slots>
 </ui>

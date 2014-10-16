@@ -15,8 +15,15 @@ public:
     explicit DiceWidget(QWidget *parent = 0);
     ~DiceWidget();
 
+public slots:
+    void rollDice();
+    void setMinBound(int min);
+    void setMaxBound(int max);
+
 private:
     Ui::DiceWidget *ui;
+    int min;
+    int max;
 };
 
 #endif // DICEWIDGET_H
