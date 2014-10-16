@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    countdowntimer.cpp
+    countdowntimer.cpp \
+    dicewidget.cpp
 
 HEADERS  += mainwindow.h \
-    countdowntimer.h
+    countdowntimer.h \
+    dicewidget.h
 
 FORMS    += mainwindow.ui \
-    countdowntimer.ui
+    countdowntimer.ui \
+    dicewidget.ui

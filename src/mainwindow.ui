@@ -36,7 +36,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="diceTab">
+      <widget class="DiceWidget" name="diceTab">
        <attribute name="title">
         <string>Dice</string>
        </attribute>
@@ -52,6 +52,12 @@
    <class>CountdownTimer</class>
    <extends>QWidget</extends>
    <header>countdowntimer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DiceWidget</class>
+   <extends>QWidget</extends>
+   <header>dicewidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
