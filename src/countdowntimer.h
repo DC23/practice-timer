@@ -21,6 +21,7 @@ public slots:
 
 private:
     Ui::CountdownTimer *ui;
+    CountdownOptions options;
 };
 
 #endif // COUNTDOWNTIMER_H

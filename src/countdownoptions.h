@@ -6,6 +6,7 @@ class CountdownOptions
 {
 public:
     CountdownOptions();
+
     inline QTime getPresetOne() const { return presetOne; }
     inline QTime getPresetTwo() const { return presetTwo; }
     inline QTime getPresetThree() const { return presetThree; }

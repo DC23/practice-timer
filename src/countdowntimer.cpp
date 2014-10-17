@@ -19,6 +19,7 @@ CountdownTimer::~CountdownTimer()
 
 void CountdownTimer::applyOptions(const CountdownOptions& options)
 {
+    this->options = options;
     ui->preset1->setText(options.getPresetOne().toString());
     ui->preset2->setText(options.getPresetTwo().toString());
     ui->preset3->setText(options.getPresetThree().toString());
