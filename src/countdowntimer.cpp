@@ -4,7 +4,9 @@
 CountdownTimer::CountdownTimer(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CountdownTimer),
-    updateTick(new QTimer(this))
+    updateTick(new QTimer(this)),
+    countdown(new QTimer(this)),
+    cachedFullDuration(60000)
 {
     ui->setupUi(this);
 
@@ -12,17 +14,21 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     connect(updateTick, SIGNAL(timeout()), this, SLOT(update()));
     updateTick->setSingleShot(false);
 
+    countdown->setSingleShot(true);
+
     // load the initial options
     CountdownOptions options;
     applyOptions(options);
 
     stop();
+    presetOne();
 }
 
 CountdownTimer::~CountdownTimer()
 {
     delete ui;
     delete updateTick;
+    delete countdown;
 }
 
 bool CountdownTimer::isRunning() const
@@ -48,9 +54,9 @@ void CountdownTimer::start()
 {
     if (!isRunning())
     {
-        updateTick->start(200);
-        //stopwatch.Start();
+        countdown->start(); // start from the current interval
         ui->startStop->setText("&Pause");
+        updateTick->start(200);
         updateButtonStates();
     }
 }
@@ -59,9 +65,11 @@ void CountdownTimer::stop()
 {
     if (isRunning())
     {
-        //stopwatch.Stop();
-        ui->startStop->setText("&Start");
         updateTick->stop();
+        int remainingTime = countdown->remainingTime();
+        countdown->stop();
+        countdown->setInterval(remainingTime);
+        ui->startStop->setText("&Start");
         updateButtonStates();
     }
 }
@@ -71,48 +79,58 @@ void CountdownTimer::reset()
     if (isRunning())
         stop();
 
-    // reset stopwatch
+    countdown->setInterval(cachedFullDuration);
     update(); // force a UI update
 }
 
 void CountdownTimer::set()
 {
-    // stopwatch->setTime();
+    // launch dialog
+    // get result
+    // setTime
 }
 
-void CountdownTimer::setTime(const QTime &time)
+void CountdownTimer::set(const QTime &time)
 {
-
+    if (!isRunning())
+    {
+        cachedFullDuration = time.msecsSinceStartOfDay();
+        countdown->setInterval(cachedFullDuration);
+        update(); // force a UI update
+    }
 }
 
 void CountdownTimer::presetOne()
 {
     if (!isRunning())
-        setTime(options.getPresetOne());
+        set(options.getPresetOne());
 }
 
 void CountdownTimer::presetTwo()
 {
     if (!isRunning())
-        setTime(options.getPresetTwo());
+        set(options.getPresetTwo());
 }
 
 void CountdownTimer::presetThree()
 {
     if (!isRunning())
-        setTime(options.getPresetThree());
+        set(options.getPresetThree());
 }
 
 void CountdownTimer::presetFour()
 {
     if (!isRunning())
-        setTime(options.getPresetFour());
+        set(options.getPresetFour());
 }
 
 void CountdownTimer::update()
 {
-    // check stopwatch for elapsed time
-    // update UI
+    QTime zero(0,0,0,0);
+    QTime current;
+    int remaining = isRunning() ? countdown->remainingTime() : cachedFullDuration;
+    current = zero.addMSecs(remaining);
+    ui->timeLabel->setText(current.toString("hh:mm:ss"));
 }
 
 void CountdownTimer::toggleTimerState()

@@ -27,7 +27,7 @@ public slots:
     void stop();
     void reset();
     void set();
-    void setTime(const QTime& time);
+    void set(const QTime& time);
     void presetOne();
     void presetTwo();
     void presetThree();
@@ -42,7 +42,9 @@ private:
 
     Ui::CountdownTimer *ui;
     QTimer* updateTick;
+    QTimer* countdown;
     CountdownOptions options;
+    int cachedFullDuration;
 };
 
 #endif // COUNTDOWNTIMER_H
