@@ -12,6 +12,8 @@ DiceWidget::DiceWidget(QWidget *parent) :
     ui->setupUi(this);
     ui->min->setValue(min);
     ui->max->setValue(max);
+    ui->min->setMaximum(max - 1);
+    ui->max->setMinimum(min + 1);
     rollDice();
 }
 
@@ -28,9 +30,11 @@ void DiceWidget::rollDice()
 void DiceWidget::setMinBound(int min)
 {
     this->min = min;
+    ui->max->setMinimum(min + 1);
 }
 
 void DiceWidget::setMaxBound(int max)
 {
     this->max = max;
+    ui->min->setMaximum(max - 1);
 }
