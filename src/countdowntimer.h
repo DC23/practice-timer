@@ -35,6 +35,7 @@ public slots:
 
 private slots:
     void update();
+    void timesUp();
 
 private:
     void toggleTimerState();

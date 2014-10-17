@@ -1,5 +1,6 @@
 #include "countdowntimer.h"
 #include "ui_countdowntimer.h"
+#include <QMessageBox>
 
 CountdownTimer::CountdownTimer(QWidget *parent) :
     QWidget(parent),
@@ -10,10 +11,10 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // connect up the timer that we use for updating the display
     connect(updateTick, SIGNAL(timeout()), this, SLOT(update()));
     updateTick->setSingleShot(false);
 
+    connect(countdown, SIGNAL(timeout()), this, SLOT(timesUp()));
     countdown->setSingleShot(true);
 
     // load the initial options
@@ -131,6 +132,17 @@ void CountdownTimer::update()
     int remaining = isRunning() ? countdown->remainingTime() : cachedFullDuration;
     current = zero.addMSecs(remaining);
     ui->timeLabel->setText(current.toString("hh:mm:ss"));
+}
+
+void CountdownTimer::timesUp()
+{
+    reset();
+
+    QMessageBox mb;
+    mb.setText("Time's Up");
+    mb.setStandardButtons(QMessageBox::Ok);
+    mb.setDefaultButton(QMessageBox::Ok);
+    mb.exec();
 }
 
 void CountdownTimer::toggleTimerState()
