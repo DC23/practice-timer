@@ -10,6 +10,7 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
 
     // connect up the timer that we use for updating the display
     connect(updateTick, SIGNAL(timeout()), this, SLOT(update()));
+    updateTick->setSingleShot(false);
 
     // load the initial options
     CountdownOptions options;
@@ -26,7 +27,7 @@ CountdownTimer::~CountdownTimer()
 
 bool CountdownTimer::isRunning() const
 {
-   return false;
+   return updateTick->isActive();
 }
 
 void CountdownTimer::applyOptions(const CountdownOptions& options)
@@ -45,27 +46,39 @@ void CountdownTimer::startStop()
 
 void CountdownTimer::start()
 {
-    updateTick->start();
-    //timer.Start();
-    ui->startStop->setText("&Pause");
+    if (!isRunning())
+    {
+        updateTick->start(200);
+        //stopwatch.Start();
+        ui->startStop->setText("&Pause");
+    }
 }
 
 void CountdownTimer::stop()
 {
-    //timer.Stop();
-    ui->startStop->setText("&Start");
-    updateTick->stop();
+    if (isRunning())
+    {
+        //stopwatch.Stop();
+        ui->startStop->setText("&Start");
+        updateTick->stop();
+    }
 }
 
 void CountdownTimer::reset()
-{}
+{
+    // reset stopwatch
+    update(); // force a UI update
+}
 
 void CountdownTimer::set(const QTime& time)
-{}
+{
+    // stopwatch->setTime(time);
+}
 
 void CountdownTimer::update()
 {
-
+    // check stopwatch for elapsed time
+    // update UI
 }
 
 void CountdownTimer::toggleTimerState()
