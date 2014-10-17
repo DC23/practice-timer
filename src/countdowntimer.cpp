@@ -140,6 +140,7 @@ void CountdownTimer::timesUp()
 
     QMessageBox mb;
     mb.setText("Time's Up");
+    mb.setWindowTitle("Countdown Timer");
     mb.setStandardButtons(QMessageBox::Ok);
     mb.setDefaultButton(QMessageBox::Ok);
     mb.exec();
