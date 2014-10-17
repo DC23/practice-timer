@@ -51,6 +51,7 @@ void CountdownTimer::start()
         updateTick->start(200);
         //stopwatch.Start();
         ui->startStop->setText("&Pause");
+        updateButtonStates();
     }
 }
 
@@ -61,18 +62,51 @@ void CountdownTimer::stop()
         //stopwatch.Stop();
         ui->startStop->setText("&Start");
         updateTick->stop();
+        updateButtonStates();
     }
 }
 
 void CountdownTimer::reset()
 {
+    if (isRunning())
+        stop();
+
     // reset stopwatch
     update(); // force a UI update
 }
 
-void CountdownTimer::set(const QTime& time)
+void CountdownTimer::set()
 {
-    // stopwatch->setTime(time);
+    // stopwatch->setTime();
+}
+
+void CountdownTimer::setTime(const QTime &time)
+{
+
+}
+
+void CountdownTimer::presetOne()
+{
+    if (!isRunning())
+        setTime(options.getPresetOne());
+}
+
+void CountdownTimer::presetTwo()
+{
+    if (!isRunning())
+        setTime(options.getPresetTwo());
+}
+
+void CountdownTimer::presetThree()
+{
+    if (!isRunning())
+        setTime(options.getPresetThree());
+}
+
+void CountdownTimer::presetFour()
+{
+    if (!isRunning())
+        setTime(options.getPresetFour());
 }
 
 void CountdownTimer::update()
@@ -87,4 +121,14 @@ void CountdownTimer::toggleTimerState()
         stop();
     else
         start();
+}
+
+void CountdownTimer::updateButtonStates()
+{
+    bool enable = !isRunning();
+    ui->preset1->setEnabled(enable);
+    ui->preset2->setEnabled(enable);
+    ui->preset3->setEnabled(enable);
+    ui->preset4->setEnabled(enable);
+    ui->btnSet->setEnabled(enable);
 }

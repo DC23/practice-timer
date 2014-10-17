@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>330</width>
-    <height>140</height>
+    <height>276</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -72,7 +72,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btnSet">
        <property name="text">
         <string>Se&amp;t</string>
        </property>
@@ -154,5 +154,127 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>startStop</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>startStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reset</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSet</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>set()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>266</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset1</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetOne()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset2</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetTwo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset3</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetThree()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset4</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetFour()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>283</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>startStop()</slot>
+  <slot>reset()</slot>
+  <slot>set()</slot>
+  <slot>presetOne()</slot>
+  <slot>presetTwo()</slot>
+  <slot>presetThree()</slot>
+  <slot>presetFour()</slot>
+ </slots>
 </ui>

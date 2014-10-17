@@ -26,13 +26,19 @@ public slots:
     void start();
     void stop();
     void reset();
-    void set(const QTime& time);
+    void set();
+    void setTime(const QTime& time);
+    void presetOne();
+    void presetTwo();
+    void presetThree();
+    void presetFour();
 
 private slots:
     void update();
 
 private:
     void toggleTimerState();
+    void updateButtonStates();
 
     Ui::CountdownTimer *ui;
     QTimer* updateTick;
