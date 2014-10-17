@@ -6,9 +6,21 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     ui(new Ui::CountdownTimer)
 {
     ui->setupUi(this);
+
+    // load the initial options
+    CountdownOptions options;
+    applyOptions(options);
 }
 
 CountdownTimer::~CountdownTimer()
 {
     delete ui;
+}
+
+void CountdownTimer::applyOptions(const CountdownOptions& options)
+{
+    ui->preset1->setText(options.getPresetOne().toString());
+    ui->preset2->setText(options.getPresetTwo().toString());
+    ui->preset3->setText(options.getPresetThree().toString());
+    ui->preset4->setText(options.getPresetFour().toString());
 }
