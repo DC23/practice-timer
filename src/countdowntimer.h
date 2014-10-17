@@ -2,6 +2,7 @@
 #define COUNTDOWNTIMER_H
 
 #include <QWidget>
+#include <QTime>
 #include "countdownoptions.h"
 
 namespace Ui {
@@ -18,6 +19,10 @@ public:
 
 public slots:
     void applyOptions(const CountdownOptions& options);
+    void start();
+    void stop();
+    void reset();
+    void set(const QTime& time);
 
 private:
     Ui::CountdownTimer *ui;

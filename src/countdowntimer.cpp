@@ -25,3 +25,15 @@ void CountdownTimer::applyOptions(const CountdownOptions& options)
     ui->preset3->setText(options.getPresetThree().toString());
     ui->preset4->setText(options.getPresetFour().toString());
 }
+
+void CountdownTimer::start()
+{}
+
+void CountdownTimer::stop()
+{}
+
+void CountdownTimer::reset()
+{}
+
+void CountdownTimer::set(const QTime& time)
+{}
