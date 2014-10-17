@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QTime>
+#include <QTimer>
 #include "countdownoptions.h"
 
 namespace Ui {
@@ -27,10 +28,14 @@ public slots:
     void reset();
     void set(const QTime& time);
 
+private slots:
+    void update();
+
 private:
     void toggleTimerState();
 
     Ui::CountdownTimer *ui;
+    QTimer* updateTick;
     CountdownOptions options;
 };
 

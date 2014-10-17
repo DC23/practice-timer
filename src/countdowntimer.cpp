@@ -3,9 +3,13 @@
 
 CountdownTimer::CountdownTimer(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::CountdownTimer)
+    ui(new Ui::CountdownTimer),
+    updateTick(new QTimer(this))
 {
     ui->setupUi(this);
+
+    // connect up the timer that we use for updating the display
+    connect(updateTick, SIGNAL(timeout()), this, SLOT(update()));
 
     // load the initial options
     CountdownOptions options;
@@ -17,6 +21,7 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
 CountdownTimer::~CountdownTimer()
 {
     delete ui;
+    delete updateTick;
 }
 
 bool CountdownTimer::isRunning() const
@@ -40,7 +45,7 @@ void CountdownTimer::startStop()
 
 void CountdownTimer::start()
 {
-    //updateTick.Enabled = true;
+    updateTick->start();
     //timer.Start();
     ui->startStop->setText("&Pause");
 }
@@ -49,7 +54,7 @@ void CountdownTimer::stop()
 {
     //timer.Stop();
     ui->startStop->setText("&Start");
-    //updateTick.Enabled = false;
+    updateTick->stop();
 }
 
 void CountdownTimer::reset()
@@ -57,6 +62,11 @@ void CountdownTimer::reset()
 
 void CountdownTimer::set(const QTime& time)
 {}
+
+void CountdownTimer::update()
+{
+
+}
 
 void CountdownTimer::toggleTimerState()
 {
