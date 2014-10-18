@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/audio">
+        <file>TimesUp.wav</file>
+    </qresource>
+</RCC>
