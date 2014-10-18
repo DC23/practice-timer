@@ -1,5 +1,6 @@
 #include "countdowntimer.h"
 #include "ui_countdowntimer.h"
+#include "settimechooser.h"
 #include <QMessageBox>
 
 CountdownTimer::CountdownTimer(QWidget *parent) :
@@ -86,9 +87,12 @@ void CountdownTimer::reset()
 
 void CountdownTimer::set()
 {
-    // launch dialog
-    // get result
-    // setTime
+    SetTimeChooser timeChooser;
+    timeChooser.setTime(QTime(0,0,0).addMSecs(cachedFullDuration));
+    if (timeChooser.exec() == QDialog::Accepted)
+    {
+        set(timeChooser.getTime());
+    }
 }
 
 void CountdownTimer::set(const QTime &time)
