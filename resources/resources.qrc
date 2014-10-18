@@ -2,4 +2,7 @@
     <qresource prefix="/audio">
         <file>TimesUp.wav</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>Yes, there are two rocket icons..png</file>
+    </qresource>
 </RCC>

@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Countdown Timer</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/resources.qrc">
+    <normaloff>:/icons/Yes, there are two rocket icons..png</normaloff>:/icons/Yes, there are two rocket icons..png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -91,6 +95,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
