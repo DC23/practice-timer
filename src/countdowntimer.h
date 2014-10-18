@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTime>
 #include <QTimer>
+#include <QSound>
 #include "countdownoptions.h"
 
 namespace Ui {
@@ -44,6 +45,7 @@ private:
     Ui::CountdownTimer *ui;
     QTimer* updateTick;
     QTimer* countdown;
+    QSound* timesUpChime;
     CountdownOptions options;
     int cachedFullDuration;
 };

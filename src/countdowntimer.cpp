@@ -8,6 +8,7 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     ui(new Ui::CountdownTimer),
     updateTick(new QTimer(this)),
     countdown(new QTimer(this)),
+    timesUpChime(new QSound(":/audio/TimesUp.wav", this)),
     cachedFullDuration(60000)
 {
     ui->setupUi(this);
@@ -22,6 +23,10 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     CountdownOptions options;
     applyOptions(options);
 
+    // set up the times up chime
+    timesUpChime->setLoops(1);
+    //connect(countdown, SIGNAL(timeout()), timesUpChime, SLOT(play()));
+
     stop();
     presetOne();
 }
@@ -31,6 +36,7 @@ CountdownTimer::~CountdownTimer()
     delete ui;
     delete updateTick;
     delete countdown;
+    delete timesUpChime;
 }
 
 bool CountdownTimer::isRunning() const
@@ -142,12 +148,21 @@ void CountdownTimer::timesUp()
 {
     reset();
 
-    QMessageBox mb;
-    mb.setText("Time's Up");
-    mb.setWindowTitle("Countdown Timer");
-    mb.setStandardButtons(QMessageBox::Ok);
-    mb.setDefaultButton(QMessageBox::Ok);
-    mb.exec();
+    if (options.getTimesUpChime())
+        timesUpChime->play();
+
+    if (options.getTimesUpMessage())
+    {
+        QMessageBox mb;
+        mb.setText("Time's Up");
+        mb.setWindowTitle("Countdown Timer");
+        mb.setStandardButtons(QMessageBox::Ok);
+        mb.setDefaultButton(QMessageBox::Ok);
+        mb.exec();
+    }
+
+    if (options.getLoop())
+        startStop();
 }
 
 void CountdownTimer::toggleTimerState()

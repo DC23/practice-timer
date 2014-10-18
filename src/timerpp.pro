@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,3 +29,8 @@ FORMS    += mainwindow.ui \
     countdowntimer.ui \
     dicewidget.ui \
     settimechooser.ui
+
+OTHER_FILES +=
+
+RESOURCES += \
+    resources.qrc
