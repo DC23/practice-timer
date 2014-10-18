@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="CountdownTimer" name="widget" native="true">
+     <widget class="CountdownTimer" name="countdownTimerWidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -41,6 +41,11 @@
         <string>Dice</string>
        </attribute>
       </widget>
+      <widget class="CountdownOptionsWidget" name="cdOptionsTab">
+       <attribute name="title">
+        <string>Options</string>
+       </attribute>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -58,6 +63,12 @@
    <class>DiceWidget</class>
    <extends>QWidget</extends>
    <header>dicewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CountdownOptionsWidget</class>
+   <extends>QWidget</extends>
+   <header>countdownoptionswidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

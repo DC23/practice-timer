@@ -16,6 +16,10 @@ public:
     inline bool getTimesUpMessage() const { return showMessageBox; }
     inline bool getLoop() const { return loop; }
 
+    inline void setTimesUpMessage(bool value) { showMessageBox = value; }
+    inline void setTimesUpChime(bool value) { playChime = value; }
+    inline void setLoop(bool value) { loop = value; }
+
 private:
     QTime presetOne;
     QTime presetTwo;

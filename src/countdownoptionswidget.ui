@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CountdownOptionsWidget</class>
+ <widget class="QWidget" name="CountdownOptionsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>201</width>
+    <height>143</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QCheckBox" name="cbPlayChime">
+     <property name="text">
+      <string>Play Sound</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbShowMessageBox">
+     <property name="text">
+      <string>Message Box</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbLoop">
+     <property name="text">
+      <string>Loop</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cbPlayChime</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CountdownOptionsWidget</receiver>
+   <slot>propertyChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbShowMessageBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CountdownOptionsWidget</receiver>
+   <slot>propertyChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbLoop</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CountdownOptionsWidget</receiver>
+   <slot>propertyChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>18</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>propertyChanged()</slot>
+ </slots>
+</ui>

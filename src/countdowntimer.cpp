@@ -9,6 +9,7 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     updateTick(new QTimer(this)),
     countdown(new QTimer(this)),
     timesUpChime(new QSound(":/audio/TimesUp.wav", this)),
+    options(),
     cachedFullDuration(60000)
 {
     ui->setupUi(this);
@@ -20,7 +21,6 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
     countdown->setSingleShot(true);
 
     // load the initial options
-    CountdownOptions options;
     applyOptions(options);
 
     // set up the times up chime
