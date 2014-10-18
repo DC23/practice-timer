@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     dicewidget.cpp \
     countdownoptions.cpp \
     settimechooser.cpp \
-    countdownoptionswidget.cpp
+    countdownoptionswidget.cpp \
+    time_delta.cpp
 
 HEADERS  += mainwindow.h \
     countdowntimer.h \
     dicewidget.h \
     countdownoptions.h \
     settimechooser.h \
-    countdownoptionswidget.h
+    countdownoptionswidget.h \
+    time_delta.h
 
 FORMS    += mainwindow.ui \
     countdowntimer.ui \
