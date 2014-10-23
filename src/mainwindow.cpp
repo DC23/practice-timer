@@ -35,6 +35,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateStatus()
 {
-    TimeDelta uptime = QDateTime::currentDateTime() - startTime;
-    uptimeLabel->setText(QString("Total time: %1 hours, %2 minutes").arg(uptime.InHours()).arg(uptime.InMinutes()));
+    TimeDelta duptime = QDateTime::currentDateTime() - startTime;
+    QTime uptime = QTime(0,0,0).addMSecs(duptime.InMilliseconds());
+    uptimeLabel->setText(QString("Total time: %1").arg(uptime.toString("hh:mm")));
 }
