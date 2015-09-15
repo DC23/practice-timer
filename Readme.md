@@ -1,5 +1,5 @@
-# DC's countdown timer plus plus
-A countdown timer and whichever other functions I find useful 
+# DC's Practice Timer
+A countdown timer and some other functions that I find useful 
 while practicing guitar. 
 
 ## Attributions
