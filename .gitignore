@@ -3,3 +3,4 @@ build/
 .ipynb_checkpoints/
 add_preamble.ipynb
 build-timerpp-Desktop_Qt_5_5_0_MinGW_32bit-Debug/
+build-timerpp-Desktop_Qt_5_5_0_MinGW_32bit-Release/
