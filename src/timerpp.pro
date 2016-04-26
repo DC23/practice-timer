@@ -39,3 +39,6 @@ OTHER_FILES +=
 
 RESOURCES += \
     ../resources/resources.qrc
+
+# Include the Windows-specific ico icon
+RC_FILE = ../resources/resources.rc
