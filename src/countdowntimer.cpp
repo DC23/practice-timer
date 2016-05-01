@@ -43,7 +43,6 @@ CountdownTimer::CountdownTimer(QWidget *parent) :
 
     // set up the times up chime
     timesUpChime->setLoops(1);
-    //connect(countdown, SIGNAL(timeout()), timesUpChime, SLOT(play()));
 
     stop();
     presetOne();
@@ -69,6 +68,10 @@ void CountdownTimer::applyOptions(const CountdownOptions& options)
     ui->preset2->setText(options.getPresetTwo().toString());
     ui->preset3->setText(options.getPresetThree().toString());
     ui->preset4->setText(options.getPresetFour().toString());
+    ui->preset5->setText(options.getPresetFive().toString());
+    ui->preset6->setText(options.getPresetSix().toString());
+    ui->preset7->setText(options.getPresetSeven().toString());
+    ui->preset8->setText(options.getPresetEight().toString());
 }
 
 void CountdownTimer::startStop()
@@ -129,6 +132,26 @@ void CountdownTimer::set(const QTime &time)
     }
 }
 
+void CountdownTimer::addMinute()
+{
+    countdown->setInterval(countdown->remainingTime() + 60 * 1000);
+}
+
+void CountdownTimer::subMinute()
+{
+    countdown->setInterval(countdown->remainingTime() - 60 * 1000);
+}
+
+void CountdownTimer::addSecond()
+{
+    countdown->setInterval(countdown->remainingTime() + 1000);
+}
+
+void CountdownTimer::subSecond()
+{
+    countdown->setInterval(countdown->remainingTime() - 1000);
+}
+
 void CountdownTimer::presetOne()
 {
     if (!isRunning())
@@ -151,6 +174,30 @@ void CountdownTimer::presetFour()
 {
     if (!isRunning())
         set(options.getPresetFour());
+}
+
+void CountdownTimer::presetFive()
+{
+    if (!isRunning())
+        set(options.getPresetFive());
+}
+
+void CountdownTimer::presetSix()
+{
+    if (!isRunning())
+        set(options.getPresetSix());
+}
+
+void CountdownTimer::presetSeven()
+{
+    if (!isRunning())
+        set(options.getPresetSeven());
+}
+
+void CountdownTimer::presetEight()
+{
+    if (!isRunning())
+        set(options.getPresetEight());
 }
 
 void CountdownTimer::update()

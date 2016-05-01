@@ -19,10 +19,14 @@
 #include "countdownoptions.h"
 
 CountdownOptions::CountdownOptions() :
-    presetOne(0,1,05),
-    presetTwo(0,5,0),
-    presetThree(0,10,0),
-    presetFour(0,25,0),
+    presetOne(0,1,20),
+    presetTwo(0,2,0),
+    presetThree(0,5,0),
+    presetFour(0,10,0),
+    presetFive(0,15,0),
+    presetSix(0,20,0),
+    presetSeven(0,25,0),
+    presetEight(0,30,0),
     playChime(false),
     showMessageBox(false),
     loop(false)

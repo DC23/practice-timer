@@ -29,6 +29,10 @@ public:
     inline QTime getPresetTwo() const { return presetTwo; }
     inline QTime getPresetThree() const { return presetThree; }
     inline QTime getPresetFour() const { return presetFour; }
+    inline QTime getPresetFive() const { return presetFive; }
+    inline QTime getPresetSix() const { return presetSix; }
+    inline QTime getPresetSeven() const { return presetSeven; }
+    inline QTime getPresetEight() const { return presetEight; }
 
     inline bool getTimesUpChime() const { return playChime; }
     inline bool getTimesUpMessage() const { return showMessageBox; }
@@ -43,6 +47,10 @@ private:
     QTime presetTwo;
     QTime presetThree;
     QTime presetFour;
+    QTime presetFive;
+    QTime presetSix;
+    QTime presetSeven;
+    QTime presetEight;
     bool playChime;
     bool showMessageBox;
     bool loop;
