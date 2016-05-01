@@ -24,7 +24,7 @@ DiceWidget::DiceWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DiceWidget),
     min(1),
-    max(12)
+    max(8)
 {
     qsrand(QTime::currentTime().msec());
     ui->setupUi(this);
