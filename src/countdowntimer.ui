@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>330</width>
-    <height>228</height>
+    <height>197</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>330</width>
-    <height>228</height>
+    <height>197</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -109,64 +109,6 @@
      </item>
      <item>
       <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <spacer name="horizontalSpacer_7">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="add_minute">
-       <property name="text">
-        <string>+ Minute</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="sub_minute">
-       <property name="text">
-        <string>- Minute</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="add_sec">
-       <property name="text">
-        <string>+ Second</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="sub_sec">
-       <property name="text">
-        <string>- Second</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_8">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -304,7 +246,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -315,10 +257,6 @@
   <tabstop>startStop</tabstop>
   <tabstop>reset</tabstop>
   <tabstop>btnSet</tabstop>
-  <tabstop>add_minute</tabstop>
-  <tabstop>sub_minute</tabstop>
-  <tabstop>add_sec</tabstop>
-  <tabstop>sub_sec</tabstop>
   <tabstop>preset1</tabstop>
   <tabstop>preset2</tabstop>
   <tabstop>preset3</tabstop>
@@ -503,70 +441,6 @@
     <hint type="destinationlabel">
      <x>322</x>
      <y>190</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>add_minute</sender>
-   <signal>released()</signal>
-   <receiver>CountdownTimer</receiver>
-   <slot>addMinute()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>34</x>
-     <y>139</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>5</x>
-     <y>165</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sub_minute</sender>
-   <signal>released()</signal>
-   <receiver>CountdownTimer</receiver>
-   <slot>subMinute()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>121</x>
-     <y>134</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>8</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>add_sec</sender>
-   <signal>released()</signal>
-   <receiver>CountdownTimer</receiver>
-   <slot>addSecond()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>184</x>
-     <y>137</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>329</x>
-     <y>106</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sub_sec</sender>
-   <signal>released()</signal>
-   <receiver>CountdownTimer</receiver>
-   <slot>subSecond()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>262</x>
-     <y>135</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>329</x>
-     <y>142</y>
     </hint>
    </hints>
   </connection>

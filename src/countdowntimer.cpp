@@ -132,26 +132,6 @@ void CountdownTimer::set(const QTime &time)
     }
 }
 
-void CountdownTimer::addMinute()
-{
-    countdown->setInterval(countdown->remainingTime() + 60 * 1000);
-}
-
-void CountdownTimer::subMinute()
-{
-    countdown->setInterval(countdown->remainingTime() - 60 * 1000);
-}
-
-void CountdownTimer::addSecond()
-{
-    countdown->setInterval(countdown->remainingTime() + 1000);
-}
-
-void CountdownTimer::subSecond()
-{
-    countdown->setInterval(countdown->remainingTime() - 1000);
-}
-
 void CountdownTimer::presetOne()
 {
     if (!isRunning())
@@ -245,5 +225,9 @@ void CountdownTimer::updateButtonStates()
     ui->preset2->setEnabled(enable);
     ui->preset3->setEnabled(enable);
     ui->preset4->setEnabled(enable);
+    ui->preset5->setEnabled(enable);
+    ui->preset6->setEnabled(enable);
+    ui->preset7->setEnabled(enable);
+    ui->preset8->setEnabled(enable);
     ui->btnSet->setEnabled(enable);
 }
