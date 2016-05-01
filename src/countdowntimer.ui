@@ -406,7 +406,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>126</x>
-     <y>284</y>
+     <y>227</y>
     </hint>
    </hints>
   </connection>
@@ -422,7 +422,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>197</x>
-     <y>276</y>
+     <y>227</y>
     </hint>
    </hints>
   </connection>
@@ -438,7 +438,135 @@
     </hint>
     <hint type="destinationlabel">
      <x>283</x>
-     <y>288</y>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset5</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetFive()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset6</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetSix()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>204</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>29</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset7</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetSeven()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>preset8</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>presetEight()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_minute</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>addMinute()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sub_minute</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>subMinute()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_sec</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>addSecond()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>184</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sub_sec</sender>
+   <signal>released()</signal>
+   <receiver>CountdownTimer</receiver>
+   <slot>subSecond()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>142</y>
     </hint>
    </hints>
   </connection>
@@ -451,5 +579,13 @@
   <slot>presetTwo()</slot>
   <slot>presetThree()</slot>
   <slot>presetFour()</slot>
+  <slot>presetSix()</slot>
+  <slot>presetFive()</slot>
+  <slot>presetSeven()</slot>
+  <slot>presetEight()</slot>
+  <slot>addMinute()</slot>
+  <slot>subMinute()</slot>
+  <slot>addSecond()</slot>
+  <slot>subSecond()</slot>
  </slots>
 </ui>
