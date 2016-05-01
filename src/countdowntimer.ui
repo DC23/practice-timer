@@ -7,13 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>330</width>
-    <height>276</height>
+    <height>228</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
     <width>330</width>
-    <height>140</height>
+    <height>228</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -27,6 +33,24 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="timeLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>100</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>312</width>
+       <height>88</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>312</width>
+       <height>88</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <family>Droid Sans Mono</family>
@@ -99,6 +123,64 @@
     </layout>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="add_minute">
+       <property name="text">
+        <string>+ Minute</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sub_minute">
+       <property name="text">
+        <string>- Minute</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="add_sec">
+       <property name="text">
+        <string>+ Second</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sub_sec">
+       <property name="text">
+        <string>- Second</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <spacer name="horizontalSpacer_3">
@@ -157,6 +239,64 @@
     </layout>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="preset5">
+       <property name="text">
+        <string>Preset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="preset6">
+       <property name="text">
+        <string>Preset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="preset7">
+       <property name="text">
+        <string>Preset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="preset8">
+       <property name="text">
+        <string>Preset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -171,6 +311,23 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>startStop</tabstop>
+  <tabstop>reset</tabstop>
+  <tabstop>btnSet</tabstop>
+  <tabstop>add_minute</tabstop>
+  <tabstop>sub_minute</tabstop>
+  <tabstop>add_sec</tabstop>
+  <tabstop>sub_sec</tabstop>
+  <tabstop>preset1</tabstop>
+  <tabstop>preset2</tabstop>
+  <tabstop>preset3</tabstop>
+  <tabstop>preset4</tabstop>
+  <tabstop>preset5</tabstop>
+  <tabstop>preset6</tabstop>
+  <tabstop>preset7</tabstop>
+  <tabstop>preset8</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -180,8 +337,8 @@
    <slot>startStop()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>63</x>
-     <y>126</y>
+     <x>109</x>
+     <y>115</y>
     </hint>
     <hint type="destinationlabel">
      <x>3</x>
@@ -196,8 +353,8 @@
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>126</y>
+     <x>201</x>
+     <y>115</y>
     </hint>
     <hint type="destinationlabel">
      <x>8</x>
@@ -212,8 +369,8 @@
    <slot>set()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>266</x>
-     <y>126</y>
+     <x>282</x>
+     <y>115</y>
     </hint>
     <hint type="destinationlabel">
      <x>310</x>
@@ -228,8 +385,8 @@
    <slot>presetOne()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>41</x>
-     <y>214</y>
+     <x>57</x>
+     <y>177</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
@@ -244,8 +401,8 @@
    <slot>presetTwo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>125</x>
-     <y>231</y>
+     <x>161</x>
+     <y>177</y>
     </hint>
     <hint type="destinationlabel">
      <x>126</x>
@@ -260,8 +417,8 @@
    <slot>presetThree()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>194</x>
-     <y>233</y>
+     <x>237</x>
+     <y>177</y>
     </hint>
     <hint type="destinationlabel">
      <x>197</x>
@@ -276,8 +433,8 @@
    <slot>presetFour()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>279</x>
-     <y>233</y>
+     <x>313</x>
+     <y>177</y>
     </hint>
     <hint type="destinationlabel">
      <x>283</x>
