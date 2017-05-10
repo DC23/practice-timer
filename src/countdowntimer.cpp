@@ -180,6 +180,24 @@ void CountdownTimer::presetEight()
         set(options.getPresetEight());
 }
 
+void CountdownTimer::addMinute()
+{
+    if (!isRunning())
+    {
+        QTime time = QTime(0,0,0,0).addMSecs(cachedFullDuration).addSecs(60);
+        set(time);
+    }
+}
+
+void CountdownTimer::subMinute()
+{
+    if (!isRunning())
+    {
+        QTime time = QTime(0,0,0,0).addMSecs(cachedFullDuration).addSecs(-60);
+        set(time);
+    }
+}
+
 void CountdownTimer::update()
 {
     QTime zero(0,0,0,0);
@@ -230,4 +248,6 @@ void CountdownTimer::updateButtonStates()
     ui->preset7->setEnabled(enable);
     ui->preset8->setEnabled(enable);
     ui->btnSet->setEnabled(enable);
+    ui->btnDown->setEnabled(enable);
+    ui->btnUp->setEnabled(enable);
 }

@@ -55,6 +55,8 @@ public slots:
     void presetSix();
     void presetSeven();
     void presetEight();
+    void addMinute();
+    void subMinute();
 
 private slots:
     void update();
