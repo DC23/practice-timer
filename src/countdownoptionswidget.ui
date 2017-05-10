@@ -30,7 +30,7 @@
       <string>Message Box</string>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -38,6 +38,9 @@
     <widget class="QCheckBox" name="cbLoop">
      <property name="text">
       <string>Loop</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
